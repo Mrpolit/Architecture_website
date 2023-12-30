@@ -1,14 +1,53 @@
 :root{
     --baseColor:rgb(91, 109, 146);
-    --textColor:rgb(255, 255, 255);
-    --elementColor:rgb(112, 129, 167);
+    --textColor:black;
+    --baseLightColor:rgb(112, 129, 167);
+    --elementColor:white;
 }
 body{
-    background-color: var(--textColor);
+    background-color: var(--baseColor);
     color: var(--textColor);
 }
 .onePage{
     overflow: hidden;
+}
+.intro{
+    width: 100svw;
+    height: 100svh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: var(--baseColor);
+    z-index: 0;
+    .text-logo{
+        text-transform: uppercase;
+        font-size: 10rem;
+        stroke-width: 0.2rem;
+        stroke: var(--textColor);
+        fill: transparent;
+        animation: logoFill 3s ease forwards 4s;
+    } 
+}
+@keyframes logoAnimation {
+    to{
+        stroke-dashoffset: 0;
+        
+    }
+}
+@keyframes logoFill {
+    from{
+        fill-opacity: 0;
+        fill: var(--textColor);
+        stroke-width: 0.2rem;
+    }
+    to{
+        fill-opacity: 100%;
+        fill: var(--textColor);
+        stroke-width: 0;
+    }
 }
 .main{
     width: 100svw;
@@ -17,15 +56,16 @@ body{
     top: 0;
     left: 0;
     display:flex;
+    z-index: -1;
     .navBar{
         width: 20%;
         height:100%;
         display:flex;
         justify-content: space-between;
-        background-color:var(--baseColor);
+        background-color:var(--elementColor);
         border-right-style: solid;
         border-right-width: 1%;
-        border-right-color: var(--textColor);
+        border-right-color: var(--baseColor);
         .button{
 
         }
@@ -36,7 +76,7 @@ body{
     .content{
         width: 80%;
         height:100%;
-        background-color: var(--elementColor);
+        background-color: var(--baseLightColor);
         display:flex;
         justify-content: center;
         align-items: center;
