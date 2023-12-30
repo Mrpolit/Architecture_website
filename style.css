@@ -1,0 +1,105 @@
+.mainWindow{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100svw;
+    height: 100svh;
+    background-color: white;
+    color: black;
+    display: flex;
+    z-index: -1;
+    .navBar{
+        padding: 0;
+        margin: 0;
+        display:flex;
+        justify-content:space-between;
+        flex-direction:column;
+        transition: all 0.5s ease-in-out;
+        background-color:white;
+        border-color: gray;
+        border-right-style: solid;
+        .navBarButton{
+            position: relative;
+            top:0;
+            left:0;
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            cursor: pointer;
+            div{
+                margin:0.1rem;
+                transition: all 0.5s ease-in-out;
+                border-radius:1rem;
+                border-color:black;
+                border-style:solid;
+            }
+        }
+        .itemsMenu{
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            cursor: pointer;
+            .itemsText{
+                text-transform: uppercase;
+                letter-spacing: 0.5rem;
+                overflow: hidden;
+                .letter {
+                    display: inline-block;
+                }
+            }
+        }
+        .menuLogo{
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            cursor: pointer;
+            .logoText{
+                text-transform: uppercase;
+                .letter {
+                    display: inline-block;
+                }
+            }
+        }
+        .copyRight{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+@media (max-width: 900px){
+    .mainWindow{
+        flex-direction:column;
+        .navBar{
+            flex-direction:row;
+            border-right-style: none;
+            border-bottom-style: solid;
+            .navBarButton{
+                flex-direction:row; 
+            }
+            .menuLogo{
+                .logoText{
+                    font-size: 90%;
+                }
+            }
+            .itemsMenu{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .itemsText{
+                    letter-spacing: 0.3rem;
+                    font-size: 60%;
+                }
+            }
+            .copyRight{
+                font-size: 80%;
+                display: flex;
+                writing-mode: sideways-lr;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
