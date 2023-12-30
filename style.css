@@ -23,20 +23,30 @@ body{
     background-color: var(--baseColor);
     z-index: 0;
     .text-logo{
+        position: relative;
         text-transform: uppercase;
         stroke-width: 0.2rem;
         stroke: var(--textColor);
         fill: transparent;
-        animation: logoFill 3s ease forwards 4s;
+        animation: logoFill 3s ease forwards 4s,fadeup 3s ease forwards 5s;
     } 
 }
-@keyframes logoAnimation {
+@keyframes fadeup{
     to{
-        stroke-dashoffset: 0;
-        
+        transform: translatey(130%);
     }
 }
-@keyframes logoFill {
+@keyframes fadedown {
+    to{
+        transform: translatey(0%);
+    }
+}
+@keyframes logoAnimation{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes logoFill{
     from{
         fill-opacity: 0;
         fill: var(--textColor);
