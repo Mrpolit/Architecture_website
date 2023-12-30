@@ -24,7 +24,6 @@ body{
     z-index: 0;
     .text-logo{
         text-transform: uppercase;
-        font-size: 10rem;
         stroke-width: 0.2rem;
         stroke: var(--textColor);
         fill: transparent;

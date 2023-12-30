@@ -1,7 +1,13 @@
 logoText();
 
 function logoText(){
+    let Screen = window.innerWidth;
     const text=document.querySelector('.text-logo');
+    const svg =document.querySelector("svg");
+    let font = Screen*(12.8/1920)+"rem";
+    text.style.fontSize = font;
+    svg.style.width = getTextWidth(text.style.innerHTML,` ${font} verdana`)+"px";
+    svg.style.height = getTextWidth(text.style.innerHTML,` ${font} verdana`)/5+"px";
     text.innerHTML = text.textContent.replace(/\S/g, "<a class='space'>$&</a>");
     stroke();
 }
@@ -13,3 +19,10 @@ function stroke(){
         logo[index].style.animation = `logoAnimation 3s ease forwards ${(index/10)*2+1}s`
     }
 }
+function getTextWidth(text, fontsize) {
+    const canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+    const context = canvas.getContext("2d");
+    context.font = fontsize;
+    const metrics = context.measureText(text);
+    return metrics.width;
+  }
