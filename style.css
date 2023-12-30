@@ -1,0 +1,44 @@
+:root{
+    --baseColor:rgb(91, 109, 146);
+    --textColor:rgb(255, 255, 255);
+    --elementColor:rgb(112, 129, 167);
+}
+body{
+    background-color: var(--textColor);
+    color: var(--textColor);
+}
+.onePage{
+    overflow: hidden;
+}
+.main{
+    width: 100svw;
+    height: 100svh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display:flex;
+    .navBar{
+        width: 20%;
+        height:100%;
+        display:flex;
+        justify-content: space-between;
+        background-color:var(--baseColor);
+        border-right-style: solid;
+        border-right-width: 1%;
+        border-right-color: var(--textColor);
+        .button{
+
+        }
+        .items{
+
+        }
+    }
+    .content{
+        width: 80%;
+        height:100%;
+        background-color: var(--elementColor);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
