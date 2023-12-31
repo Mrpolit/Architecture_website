@@ -22,29 +22,33 @@ body{
     display:flex;
     justify-content: center;
     align-items: center; 
-    background-color: var(--baseColor);
+    background: linear-gradient(-127deg, black, var(--baseLightColor) 50%);
     z-index: 0;
-    animation: fade 2s ease forwards 6s;
+    animation: positionChange 3s ease-in-out forwards 7s;
     svg{
         position: absolute;
+        background-size: cover;
+        background-position: 0;
+        background-image: url("images/introbackground.jpg");
+        mix-blend-mode: multiply;
         .text-logo{
             position: relative;
             text-transform: uppercase;
             stroke-width: 0.2rem;
             stroke: var(--textColor);
             fill: transparent;
-            animation: logoFill 3s ease forwards 4s,fade 1s ease forwards 6s;
+            animation: logoFill 2s ease forwards 4s,fade 1s ease forwards 6s;
         } 
     }
 }
-
-@keyframes fade{
-    50%{
-        background-color: black;
+@keyframes positionChange {
+    to{
+        left:100%;
     }
-    100%{
+}
+@keyframes fade{
+    to{
         fill: transparent;
-        background-color: transparent;
     }
 }
 @keyframes logoAnimation{
@@ -62,8 +66,9 @@ body{
         fill-opacity: 100%;
         fill: var(--textColor);
         stroke-width: 0;
-    }
+  }
 }
+
 
 .main{
     width: 100svw;
