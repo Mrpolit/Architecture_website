@@ -7,10 +7,12 @@
 body{
     background-color: var(--baseColor);
     color: var(--textColor);
+    font-family: 'Times New Roman', Times, serif ;
 }
 .onePage{
     overflow: hidden;
 }
+
 .intro{
     width: 100svw;
     height: 100svh;
@@ -62,6 +64,7 @@ body{
         stroke-width: 0;
     }
 }
+
 .main{
     width: 100svw;
     height: 100svh;
