@@ -22,21 +22,24 @@ body{
     align-items: center; 
     background-color: var(--baseColor);
     z-index: 0;
-    .text-logo{
-        position: relative;
-        text-transform: uppercase;
-        stroke-width: 0.2rem;
-        stroke: var(--textColor);
-        fill: transparent;
-        animation: logoFill 3s ease forwards 4s,fadeup 3s ease forwards 5s;
-    } 
+    svg{
+        position: absolute;
+        .text-logo{
+            position: relative;
+            text-transform: uppercase;
+            stroke-width: 0.2rem;
+            stroke: var(--textColor);
+            fill: transparent;
+            animation: logoFill 3s ease forwards 4s;
+        } 
+    }
 }
-@keyframes fadeup{
+@keyframes fadedown{
     to{
         transform: translatey(130%);
     }
 }
-@keyframes fadedown {
+@keyframes fadeup{
     to{
         transform: translatey(0%);
     }
