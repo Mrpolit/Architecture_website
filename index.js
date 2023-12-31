@@ -1,4 +1,5 @@
 logoText();
+setTimeout(introEnd,8000);
 
 function logoText(){
     let Screen = window.innerWidth;
@@ -24,4 +25,8 @@ function getTextWidth(text, fontsize) {
     context.font = fontsize;
     const metrics = context.measureText(text);
     return metrics.width;
+}
+function introEnd() {
+    const intro = document.querySelector('.intro');
+    intro.style.display = "none";
 }

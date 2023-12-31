@@ -22,6 +22,7 @@ body{
     align-items: center; 
     background-color: var(--baseColor);
     z-index: 0;
+    animation: fade 2s ease forwards 6s;
     svg{
         position: absolute;
         .text-logo{
@@ -30,18 +31,18 @@ body{
             stroke-width: 0.2rem;
             stroke: var(--textColor);
             fill: transparent;
-            animation: logoFill 3s ease forwards 4s;
+            animation: logoFill 3s ease forwards 4s,fade 1s ease forwards 6s;
         } 
     }
 }
-@keyframes fadedown{
-    to{
-        transform: translatey(130%);
+
+@keyframes fade{
+    50%{
+        background-color: black;
     }
-}
-@keyframes fadeup{
-    to{
-        transform: translatey(0%);
+    100%{
+        fill: transparent;
+        background-color: transparent;
     }
 }
 @keyframes logoAnimation{
