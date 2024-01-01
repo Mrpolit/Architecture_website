@@ -21,7 +21,7 @@ body{
     display:flex;
     justify-content: center;
     align-items: center; 
-    background: linear-gradient(-127deg, transparent, var(--baseLightColor) 50%);
+    background: linear-gradient(-127deg, white, var(--baseLightColor) 50%);
     z-index: 0;
     animation: positionChange 3s ease-in-out forwards 7s;
     svg{
@@ -29,7 +29,7 @@ body{
         .text-logo{
             position: relative;
             text-transform: uppercase;
-            stroke-width: 0.2rem;
+            stroke-width: 0.1rem;
             stroke: var(--textColor);
             fill: transparent;
             animation: logoFill 2s ease forwards 4s;
@@ -58,7 +58,7 @@ body{
     from{
         fill-opacity: 0;
         fill: var(--textColor);
-        stroke-width: 0.2rem;
+        stroke-width: 0.1rem;
     }
     to{
         fill-opacity: 100%;
@@ -75,30 +75,34 @@ body{
     top: 0;
     left: 0;
     z-index: -4;
-    .navBarButton{
+    .navbarshadow{
         position: fixed;
-        top: 0;
-        left: 0;
-        width: fit-content;
-        height: fit-content;
-        cursor: pointer;
+        width: 100%;
+        top:0;
+        left:0;
         z-index: -1;
-        
-        .line{
-            background-color: white;
-            width:1rem;
-            margin: 0.5rem;
-            height:0.5rem;
-            border-radius: 1rem;
-            transition: all 0.5s ease-in-out;
-        }
-        .halfline{
-            background-color: white;
-            width:1rem;
-            margin: 0.5rem;
-            height:0.5rem;
-            border-radius: 1rem;
-            transition: all 0.5s ease-in-out;
+        background-color: white;
+        box-shadow: 0 0 0.5rem black;
+        .navBarButton{
+            width: fit-content;
+            height: fit-content;
+            cursor: pointer;
+            .line{
+                background-color: var(--baseColor);
+                width:1rem;
+                margin: 0.5rem;
+                height:0.5rem;
+                border-radius: 1rem;
+                transition: all 0.5s ease-in-out;
+            }
+            .halfline{
+                background-color: var(--baseColor);
+                width:1rem;
+                margin: 0.5rem;
+                height:0.5rem;
+                border-radius: 1rem;
+                transition: all 0.5s ease-in-out;
+            }
         }
     }
     .navBar{
