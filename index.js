@@ -46,7 +46,7 @@ function navbarbtn(){
         halfline.style.backgroundColor = "var(--baseColor)";
     }else{
         navbar.style.display = "flex";
-        navbar.style.animation = "fadein 3s ease forwards ";
+        navbar.style.animation = "fadein 2s ease forwards ";
         navbarshadow.style.boxShadow="0 0 0 black";
         navbarshadow.style.backgroundColor = "transparent";
         navbarButton.style.animation = "rotateninty 1.5s ease forwards";
