@@ -3,6 +3,11 @@ setTimeout(introEnd,11000);
 
 var flag = false;
 
+const navbarButton = document.querySelector(".navBarButton");
+const navbar = document.querySelector(".navBar");
+const line = document.querySelectorAll(".line");
+const halfline = document.querySelector(".halfline");
+
 function logoText(){
     let Screen = window.innerWidth;
     const text=document.querySelector('.text-logo');
@@ -24,15 +29,25 @@ function introEnd() {
     intro.style.display = "none";
 }
 function navbarbtn(){
-    const navbarButton = document.querySelector(".navBarButton");
-    const navbar = document.querySelector(".navBar");
-
     if(flag){
-        navbar.style.display = "none";
+        navbar.style.animation = "fadeout 0.5s ease forwards ";
+        setTimeout(navbarEnd, 1000);
         navbarButton.style.animation = "rotatezero 1s ease forwards";
+        line[0].style.width="1rem";
+        line[1].style.width="1rem";
+        halfline.style.width="1rem";
     }else{
         navbar.style.display = "flex";
-        navbarButton.style.animation = "rotateninty 1s ease forwards";
+        navbar.style.animation = "fadein 3s ease forwards ";
+        navbarButton.style.animation = "rotateninty 1.5s ease forwards";
+        line[0].style.width="3rem";
+        line[1].style.width="2.5rem";
+        halfline.style.width="1.5rem";
     }
     flag=!flag;
+}
+function navbarEnd(){
+    if(!flag){
+    navbar.style.display = "none";
+    }
 }
