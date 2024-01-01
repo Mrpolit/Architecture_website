@@ -114,7 +114,6 @@ body{
         z-index: -2;
         opacity: 0;
         backdrop-filter: blur(0.2rem);
-        
         .items{
             display: flex;
             flex-direction: column;
