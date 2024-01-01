@@ -32,6 +32,7 @@ function introEnd() {
     intro.style.display = "none";
 }
 function navbarbtn(){
+    let array = document.querySelectorAll(".itemsText");
     if(flag){
         navbar.style.animation = "fadeout 0.5s ease forwards ";
         setTimeout(navbarEnd, 1000);
@@ -44,6 +45,9 @@ function navbarbtn(){
         line[1].style.backgroundColor = "var(--baseColor)";
         halfline.style.width="1rem";
         halfline.style.backgroundColor = "var(--baseColor)";
+        for (let index = 0; index < array.length; index++) {
+            array[index].style.display="none";
+        }
     }else{
         navbar.style.display = "flex";
         navbar.style.animation = "fadein 2s ease forwards ";
@@ -56,8 +60,32 @@ function navbarbtn(){
         line[1].style.backgroundColor = "white";
         halfline.style.width="1.5rem";
         halfline.style.backgroundColor = "white";
+        for (let index = 0; index < array.length; index++) {
+            array[index].style.display="flex";
+        }
+        navbaritems();
     }
     flag=!flag;
+}
+function navbaritems(){
+    var textWrapper = document.querySelectorAll('.itemsText');;
+    for (let index = 0; index < textWrapper.length; index++) {
+        textWrapper[index].innerHTML = textWrapper[index].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    }
+    anime.timeline({loop: false})
+    .add({
+        targets: '.itemsText .letter',
+        translateY: [-100,0],
+        easing: "easeOutExpo",
+        duration: 1400,
+        delay: (el, i) => 30 * i
+    }).add({
+        targets: '.itemsText',
+        opacity: 1,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+    });
 }
 function navbarEnd(){
     if(!flag){

@@ -109,11 +109,22 @@ body{
         width: 100%;
         height:100%;
         display:none;
+        justify-content: center;
+        align-items: center;
         z-index: -2;
         opacity: 0;
         backdrop-filter: blur(0.2rem);
+        
         .items{
-
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .itemsText{
+                text-transform: uppercase;
+                letter-spacing: 1rem;
+                overflow: hidden;
+            }
         }
     }
     .content{
