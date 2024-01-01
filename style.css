@@ -26,28 +26,27 @@ body{
     animation: positionChange 3s ease-in-out forwards 7s;
     svg{
         position: absolute;
-        background-size: cover;
-        background-position: 0;
-        background-image: url("images/introbackground.jpg");
-        mix-blend-mode: multiply;
         .text-logo{
             position: relative;
             text-transform: uppercase;
             stroke-width: 0.2rem;
             stroke: var(--textColor);
             fill: transparent;
-            animation: logoFill 2s ease forwards 4s,fade 1s ease forwards 6s;
+            animation: logoFill 2s ease forwards 4s;
+            .space{
+                position: absolute;
+            }
         } 
+    }
+}
+@keyframes moveText {
+    100% {
+        transform:translateY(200px);
     }
 }
 @keyframes positionChange {
     to{
         left:100%;
-    }
-}
-@keyframes fade{
-    to{
-        fill: transparent;
     }
 }
 @keyframes logoAnimation{
