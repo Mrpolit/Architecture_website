@@ -3,6 +3,7 @@ const navbar = document.querySelector(".navBar");
 const line = document.querySelectorAll(".line");
 const halfline = document.querySelector(".halfline");
 const navbarshadow = document.querySelector(".navbarshadow");
+const hoverImg=document.querySelectorAll("#hoverMenuImg");
 
 logoText();
 setTimeout(introEnd,11000);
@@ -90,5 +91,14 @@ function navbaritems(){
 function navbarEnd(){
     if(!flag){
     navbar.style.display = "none";
+    }
+}
+window.onclick = e => {
+    let name = e.target.id;
+    if(name=="hoverMenuImg"){
+        for (let index = 0; index < hoverImg.length ; index++) {
+            hoverImg[index].classList.remove("active");
+        }
+        e.target.className = "active";
     }
 }
